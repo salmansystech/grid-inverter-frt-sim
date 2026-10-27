@@ -93,19 +93,31 @@ grid-inverter-frt-sim/
 │   └── analysis/    metrics, plots, report
 ├── tests/           scenarios.m           test matrix and criteria
 ├── scripts/         run_demo, run_test_matrix, run_sil
-├── docs/            ARCHITECTURE, CONTROL_DESIGN, TEST_PLAN
+├── docs/            architecture, control design, test plan, developer guide, future work
 ├── results/         generated report and plots (git-ignored)
 └── .github/         CI: runs the test matrix on every push
 ```
 
+## Documentation
+
+| Document | Contents |
+|---|---|
+| [Architecture](docs/ARCHITECTURE.md) | System and module structure, timing model, controller block diagram, interfaces, V-model and HIL mapping |
+| [Control design](docs/CONTROL_DESIGN.md) | Plant equations, tuning of every loop, FRT strategy, known limitations |
+| [Test plan](docs/TEST_PLAN.md) | Scenarios, metric definitions, limits and their rationale |
+| [Developer guide](docs/DEVELOPER_GUIDE.md) | Setup, commands, coding rules, how to add scenarios, metrics and features, debugging, CI |
+| [Future work](docs/FUTURE_WORK.md) | Roadmap from Simulink and switching models to grid-forming control, PIL and real-time HIL |
+
 ## Roadmap
+
+Highlights from [docs/FUTURE_WORK.md](docs/FUTURE_WORK.md):
 
 - [ ] Simulink harness: the same `ctrl_step` inside a MATLAB Function block, with the plant in Simscape Electrical and a switching model for THD analysis
 - [ ] Grid-forming control (droop or virtual synchronous machine) compared with grid-following
 - [ ] Dual-sequence current control for negative-sequence injection in unbalanced faults
 - [ ] Active damping of the LCL resonance instead of the passive resistor
 - [ ] PIL on an STM32 (generated C on target, plant in MATLAB)
-- [ ] Impedance-based stability scan over SCR and X/R
+- [ ] Real-time HIL on OPAL-RT, Typhoon or RTDS
 
 ## License
 
