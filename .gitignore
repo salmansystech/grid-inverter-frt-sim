@@ -1,0 +1,15 @@
+# MATLAB
+*.asv
+*.autosave
+*.mex*
+slprj/
+*.slxc
+*~
+.DS_Store
+
+# Generated code and build output (recreate with scripts/run_sil.m)
+codegen/
+
+# Generated plots and report (recreate with scripts/run_test_matrix.m)
+results/*
+!results/.gitkeep
